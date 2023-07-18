@@ -1,37 +1,56 @@
-function sumarNumero(numero) {
-    if (resultado < 999) {
-      resultado += numero;
+
+
+function constructor(operacion,num1,num2,resultado){
+  this.operacion=operacion;
+  this.num1=num1;
+  this.num2=num2;
+  this.resultado=resultado;
+}
+
+const arrayOperaciones = []
+
+
+function sumar(num1, num2) {
+  return num1 + num2;
+}
+
+
+function restar(num1, num2) {
+  return num1 - num2;
+}
+
+
+let continuar = true;
+
+
+while (continuar) {
+ 
+  let operacion = prompt("Ingrese el tipo de operación (+ para sumar, - para restar, o 'salir' para terminar)");
+
+  if (operacion === "+" || operacion === "-") {
+  
+    let num1 = parseFloat(prompt("Ingrese el primer número"));
+    let num2 = parseFloat(prompt("Ingrese el segundo número"));
+    
+    
+    let resultado;
+    if (operacion === "+") {
+    resultado = sumar(num1, num2);
     } else {
-      alert("No se pueden sumar más números. Se alcanzó el límite máximo (999).");
+    resultado = restar(num1, num2);
     }
+    const operacionNueva = new constructor(operacion,num1,num2,resultado)
+    arrayOperaciones.push(operacionNueva)
+    
+    alert("El resultado es: " + resultado);
+  } else if (operacion === "salir") {
+   
+    continuar = false;
+    const listado = arrayOperaciones.map(calculo => ` Operacion: ${calculo.operacion}, NumeroUno: ${calculo.num1}, NumeroDos: ${calculo.num2}, Resultado: ${calculo.resultado}`);
+    alert(listado.join('\n'));
+  } else {
+    alert("Operación no válida. Por favor, ingrese + para sumar, - para restar o 'salir' para terminar.");
   }
   
-  function restarNumero(numero) {
-    if (resultado > 0) {
-      resultado -= numero;
-    } else {
-      alert("No se pueden restar más números. Se alcanzó el límite mínimo (0).");
-    }
-  }
-  let resultado = 0;
+}
 
-  function operaciones() {
-    while (true) {
-      let operacion = prompt("Ingrese '+' para sumar, '-' para restar o 'q' para salir:");
-
-      if (operacion === 'q') {
-        break;
-      }
-
-      let numero = parseInt(prompt("Ingrese un número:"));
-  
-      if (operacion === '+') {
-        sumarNumero(numero);
-      } else if (operacion === '-') {
-        restarNumero(numero);
-      }
-      alert("El resultado actual es: " + resultado);
-    }
-  }
-  operaciones();
-  
