@@ -1,0 +1,78 @@
+*{
+    font-family: "Calculator";
+    color: white;
+}
+
+@font-face {
+    font-family: "Calculator" ;
+    src: url(../fonts/Calculator.ttf);
+}
+
+body{
+    background-color:#d3d3d3;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculadora{
+    display: grid;
+    grid-template-columns: repeat(4, 75px);
+    grid-template-rows: 160px repeat(5, 75px);
+    background-color: #00916e;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 20px 10px 0px 5px #00000033;
+}
+
+button{
+    cursor: pointer;
+    margin: 5px;
+    padding: 0;
+    border-radius: 30px;
+    font-size: 40px ;
+    border: none;
+    background-color: #fffcfc;
+    color: black;
+    box-shadow: 5px 5px 10px -3px #00000040, -5px -5px 15px 3px #00ffc11f;
+}
+
+button:active{
+    background-color: #a7a7a7;
+}
+
+.col-2{
+    grid-column: span 2;
+}
+
+.rojo{
+    color: red;
+}
+
+/* PANTALLA */
+.display{
+    grid-column: 1 / -1;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 10px 10px 20px;
+    background-color: #000000d5;
+    border-radius: 20px;
+    text-align: center;
+    justify-content: space-between;
+    box-shadow:0px 0px 0px 8px #00000033 ;
+}
+
+#valor-actual{
+    font-size: 2rem;
+}
+
+#valor-sumado{
+    font-size: 2.4rem;
+}
