@@ -73,4 +73,58 @@ while (continuar) {
 const displayVSumado = document.getElementById("valor-sumado");
 const displayVActual = document.getElementById("valor-actual");
 const botonNumero = document.querySelectorAll(".numero");
-const botonOperador = document.querySelectorAll(".operador")
+const botonOperador = document.querySelectorAll(".operador");
+//parte de la respuesta coder
+const botonResultado = document.getElementById("btn-resultado")
+botonResultado.addEventListener('click', calcularTotal);
+
+function calcularTotal(){
+
+}
+
+
+
+//DARK MODE
+const colorModeButton = document.querySelector("#color-mode");
+const body = document.body;
+
+colorModeButton.addEventListener("click", cambiarModoColor);
+
+function cambiarModoColor(){
+    body.classList.toggle ("dark-mode");
+    if (body.classList.contains("dark-mode")){
+        
+    colorModeButton.innerText = " ☀️"
+    }else{
+        colorModeButton.innerText = " 🌙"
+    }
+}
+
+
+//RESPUESTA CODERASK
+
+//capturar tipo de operacion
+botonOperador.forEach(opBtn => {
+  opBtn.addEventListener('click', calcular);
+});
+
+function calcular(e){
+  e.preventDefault();
+
+  console.log(e.target.id)
+
+  displayVSumado.innerText += e.target.innerText
+}
+//capturar numeros
+botonNumero.forEach(num => {
+  num.addEventListener('click', registrarNumero);
+
+
+})
+
+function registrarNumero(e){
+  console.log(e.target.innerText)
+  displayVSumado.innerText += e.target.innerText
+}
+
+

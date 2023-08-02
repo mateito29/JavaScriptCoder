@@ -8,40 +8,40 @@
 </head>
 <body>
     <div class="container">
-        <div class="calculadora">
+        <div id="modo-color" class="calculadora">
             <div class="display">
-                <div id="valor-sumado">140 +</div>
-                <div id="valor-actual">30</div>
+                <div id="valor-sumado"></div>
+                <div id="valor-actual"></div>
             </div>
-            <button class="col-2 rojo">C</button>
+            <button id="borrador" class="col-2 rojo">C</button>
             <button>&larr;</button>
-            <button class="numero">/</button>
+            <button id="division" class="operador">/</button>
             <button class="numero">7</button>
             <button class="numero">8</button>
             <button class="numero">9</button>
-            <button class="operador">X</button>
+            <button id="multiplicacion" class="operador">X</button>
             <button class="numero">4</button>
             <button class="numero">5</button>
             <button class="numero">6</button>
-            <button class="operador">-</button>
+            <button id="resta" class="operador">-</button>
             <button class="numero">1</button>
             <button class="numero">2</button>
             <button class="numero">3</button>
-            <button class="operador">+</button>
+            <button id="suma" class="operador">+</button>
             <button class="col-2 numero">0</button>
             <button class="numero">.</button>
-            <button class="operador">=</button>
+            <button id="btn-resultado" class="operador">=</button>
         </div>
     </div>
 
+    <button id="color-mode" class="btn">🌙</button>
 
 
 
 
 
-
-
-
+    <script src="./js/Display.js"></script>
+    <script src="./js/Calculadora.js"></script>
     <script src="./js/entrega.js"></script>
 </body>
 </html>
