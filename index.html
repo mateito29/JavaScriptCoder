@@ -1,48 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
 </head>
 <body>
     <div class="container">
-        <div id="modo-color" class="calculadora">
-            <div class="display">
-                <div id="valor-sumado"></div>
-                <div id="valor-actual"></div>
-            </div>
-            <button id="borrador" class="col-2 rojo">C</button>
-            <button>&larr;</button>
-            <button id="division" class="operador">/</button>
-            <button class="numero">7</button>
-            <button class="numero">8</button>
-            <button class="numero">9</button>
-            <button id="multiplicacion" class="operador">X</button>
-            <button class="numero">4</button>
-            <button class="numero">5</button>
-            <button class="numero">6</button>
-            <button id="resta" class="operador">-</button>
-            <button class="numero">1</button>
-            <button class="numero">2</button>
-            <button class="numero">3</button>
-            <button id="suma" class="operador">+</button>
-            <button class="col-2 numero">0</button>
-            <button class="numero">.</button>
-            <button id="btn-resultado" class="operador">=</button>
+        <div class="calculadora">
+
+            <div class="pantalla">0</div>
+
+            <button id="c" class="btn">C</button>
+            <button id="borrar" class="btn">&larr;</button>
+            <button class="btn">/</button>
+            <button class="btn">*</button>
+            <button class="btn">7</button>
+            <button class="btn">8</button>
+            <button class="btn">9</button>
+            <button class="btn">-</button>
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+            <button class="btn">6</button>
+            <button class="btn">+</button>
+            <button class="btn">1</button>
+            <button class="btn">2</button>
+            <button class="btn">3</button>
+            <button id="igual" class="btn">=</button>
+            <button id="cero" class="btn">0</button>
+            <button class="btn">.</button>
         </div>
     </div>
-
-    <button id="color-mode" class="btn">🌙</button>
-
-
-
-
-
-    <script src="./js/Display.js"></script>
-    <script src="./js/Calculadora.js"></script>
+    <footer>
+        <h3>© MateAreosa_Dev</h3>
+    </footer>
     <script src="./js/entrega.js"></script>
 </body>
 </html>
-
