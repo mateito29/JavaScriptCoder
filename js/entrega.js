@@ -2,6 +2,7 @@
 //HTML
 const pantalla = document.querySelector(".pantalla");
 const botones = document.querySelectorAll(".btn");
+const boton = document.querySelector(".boton")
 
   //mostrar el valor de cada boton en la pantalla
   botones.forEach(boton => {
@@ -39,3 +40,40 @@ const botones = document.querySelectorAll(".btn");
       }
     })
   })
+
+
+
+ // Función para cambiar entre dark-mode y light-mode
+  function DarkMode() {
+  const body = document.body;
+  const darkButton = document.querySelector('#darkButton');
+  const isDarkMode = body.classList.toggle('dark-mode');
+
+  if (isDarkMode) {
+    darkButton.textContent = '☀️';
+  } else {
+    darkButton.textContent = '🌙';
+  }
+
+  // Guardar el modo actual en LocalStorage
+  localStorage.setItem('darkMode', isDarkMode);
+}
+
+// Evento para escuchar el click
+darkButton.addEventListener('click', DarkMode);
+
+// Verificar si hay un modo almacenado en LocalStorage y aplicarlo al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+  const isDarkMode = localStorage.getItem('darkMode') === 'true';
+  const body = document.body;
+  const darkButton = document.getElementById('darkButton');
+
+  if (isDarkMode) {
+    body.classList.add('dark-mode');
+    darkButton.textContent = '☀️';
+  } else {
+    darkButton.textContent = '🌙';
+  }
+});
+
+

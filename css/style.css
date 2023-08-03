@@ -24,7 +24,7 @@ body{
     display: grid;
     grid-template-columns: repeat(4, 75px);
     grid-template-rows: 160px repeat(5, 75px);
-    background-color: #270091;
+    background-color: #4525d2;
     padding: 20px;
     border-radius: 30px;
     box-shadow: 20px 10px 0px 5px #00000033;
@@ -46,11 +46,6 @@ button:active{
     background-color: #a7a7a7;
 }
 
-.col-2{
-    grid-column: span 2;
-}
-
-
 .rojo{
     color: red;
 }
@@ -69,11 +64,13 @@ button:active{
     justify-content: space-between;
     box-shadow:0px 0px 0px 8px #00000033 ;
     font-size: 2.5rem;
+    word-wrap: break-word;
 }
 
 #igual{
     grid-row: span 2;
-    background-color: red;
+    background-color: #8b5ee9;
+    
 }
 
 #cero{
@@ -87,3 +84,44 @@ footer{
 h3{
     color: black;
 }
+
+/* DARK MODE */
+.boton{
+    margin-left: 100vh;
+    width: 100px;
+    height: 55px;
+    background-color: #2c2c2c;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 5px 5px 10px -3px #00000040;
+}
+
+  body.dark-mode .calculadora {
+    /* Estilos para la calculadora en modo oscuro (dark-mode) */
+    background-color: #2c2c2c;
+    color: #ffffff;
+  }
+  
+  body.dark-mode{
+    background-color: rgba(43, 42, 41, 0.534);
+  }
+
+  body.dark-mode .btn{
+    background-color: orange;
+  }
+
+  body.dark-mode .rojo{
+    color: white;
+  }
+
+  body.dark-mode #igual{
+    background-color: rgb(172, 112, 2);
+  }
+
+  body.dark-mode button{
+    box-shadow: 5px 5px 10px -3px #00000040, -5px -5px 15px 3px #eeeeee1f;
+  }
+
+  body.dark-mode .boton{
+    background-color:#d3d3d3;
+  }
