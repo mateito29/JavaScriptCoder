@@ -30,7 +30,7 @@ body{
     box-shadow: 20px 10px 0px 5px #00000033;
 }
 
-button{
+.btn{
     cursor: pointer;
     margin: 5px;
     padding: 0;
@@ -86,14 +86,17 @@ h3{
 }
 
 /* DARK MODE */
+.container-boton{
+  display: flex;
+  justify-content: center;
+}
 .boton{
-    margin-left: 100vh;
-    width: 100px;
     height: 55px;
+    border: none;
     background-color: #2c2c2c;
-    justify-content: center;
     font-size: 2rem;
     box-shadow: 5px 5px 10px -3px #00000040;
+    border-radius: 50%;
 }
 
   body.dark-mode .calculadora {
@@ -236,3 +239,109 @@ option{
 input{
   color: black;
 }
+
+
+
+/* FORMULARIO DE INICIO Y REGISTRO */
+.container-form{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenido-form{
+  width: 100%;
+  max-width: 450px;
+  background-color: #4525d2;
+  padding: 50px 60px 70px;
+  text-align: center;
+  border-radius: 30px;
+  box-shadow: 20px 10px 0px 5px #00000033;
+}
+
+.contenido-form h1{
+  font-family:'Courier New', Courier, monospace;
+  font-size: 30px;
+  margin-bottom: 6px;
+  color: #ffffff;
+  position: relative;
+}
+.contenido-form h3{
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.input-campo{
+  background-color:#8b5ee9;
+  margin: 15px 0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  transition: max-height .5s;
+  overflow: hidden;
+}
+
+.input-form{
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 18px 15px;
+  color: white;
+  
+}
+::placeholder{
+  color: white;
+  font-family:monospace;
+}
+
+.input-campo i{
+  margin-left: 15px;
+  color: rgb(255, 255, 255);
+}
+
+form a{
+  font-family: 'Courier New', Courier, monospace;
+  text-decoration: none;
+}
+
+.btn-campo{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.btn-campo button{
+  flex-basis: 50%;
+  box-shadow: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+  font-weight:bold;
+  padding: 7px 20px;
+  font-size: 15px;
+  background-color: #8b5ee9;
+  color: white;
+  transition: background 1s;
+}
+ .input-container{
+  height: 250px;
+ }
+
+ .btn-campo button.disable{
+  background-color: white;
+  color: black;
+ }
+
+ .btn-form{
+    cursor: pointer;
+    margin: 5px;
+    padding: 0;
+    border-radius: 30px;
+    font-size: 40px ;
+    border: none;
+    background-color: #fffcfc;
+    color: black;
+ }
