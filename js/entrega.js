@@ -1,8 +1,8 @@
-
+/* 
 //HTML
 const pantalla = document.querySelector(".pantalla");
 const botones = document.querySelectorAll(".btn");
-const boton = document.querySelector(".boton")
+
 
 
   //mostrar el valor de cada boton en la pantalla
@@ -80,4 +80,102 @@ document.addEventListener('DOMContentLoaded', () => {
     darkButton.textContent = '🌙';
   }
 });
+
+ */
+
+
+// script.js
+
+
+const pantalla = document.querySelector(".pantalla");
+const darkButton = document.getElementById('darkButton');
+const body = document.body;
+
+// Objeto que almacena el estado de la calculadora y los elementos del DOM
+const calculadora = {
+  valorEnPantalla: "0",
+  darkMode: false,
+  botonesNumeros: document.querySelectorAll('.num'), 
+  botonesOperaciones: document.querySelectorAll('.operacion'), 
+  botonIgual: document.querySelector('.igual'), 
+  botonBorrar: document.querySelector('#borrar'), 
+  botonC: document.querySelector('#c') 
+};
+
+// Función para actualizar el contenido de la pantalla
+function actualizarPantalla() {
+  pantalla.textContent = calculadora.valorEnPantalla;
+}
+
+// Función para manejar los clics en los botones numéricos y operaciones
+function botonClick(event) {
+  const botonApretado = event.target.textContent;
+
+  if (calculadora.valorEnPantalla === "0" || calculadora.valorEnPantalla === "Error!") {
+    calculadora.valorEnPantalla = botonApretado;
+  } else {
+    calculadora.valorEnPantalla += botonApretado;
+  }
+
+  if (calculadora.valorEnPantalla.length >= 15) {
+    return;
+  }
+
+  actualizarPantalla();
+}
+
+// Función para calcular el resultado de la expresión
+function calcularResultado() {
+  try {
+    const resultado = eval(calculadora.valorEnPantalla);
+    const resultadoLimitado = String(resultado).slice(0, 15);
+    calculadora.valorEnPantalla = resultadoLimitado;
+  } catch {
+    calculadora.valorEnPantalla = "Error!!";
+  }
+  actualizarPantalla();
+}
+
+// Función para borrar un dígito o reiniciar a cero si se borra todo
+function borrar() {
+  if (calculadora.valorEnPantalla.length === 1 || calculadora.valorEnPantalla === "Error!") {
+    calculadora.valorEnPantalla = "0";
+  } else {
+    calculadora.valorEnPantalla = calculadora.valorEnPantalla.slice(0, -1);
+  }
+  actualizarPantalla();
+}
+
+// Función para borrar todo el contenido en pantalla
+function borrarTodo() {
+  calculadora.valorEnPantalla = "0";
+  actualizarPantalla();
+}
+
+// Función para alternar entre el modo oscuro y claro
+function toggleDarkMode() {
+  calculadora.darkMode = !calculadora.darkMode;
+  body.classList.toggle('dark-mode', calculadora.darkMode);
+  darkButton.textContent = calculadora.darkMode ? '🌙' : '☀️';
+  localStorage.setItem('darkMode', calculadora.darkMode);
+}
+
+darkButton.addEventListener('click', toggleDarkMode);
+
+// Asignar eventos a los botones numéricos y de operaciones
+calculadora.botonesNumeros.forEach(boton => {
+  boton.addEventListener('click', botonClick);
+});
+
+calculadora.botonesOperaciones.forEach(boton => {
+  boton.addEventListener('click', botonClick);
+});
+
+// Asignar eventos al botón de igual y los botones de borrar
+calculadora.botonIgual.addEventListener('click', calcularResultado);
+calculadora.botonBorrar.addEventListener('click', borrar);
+calculadora.botonC.addEventListener('click', borrarTodo);
+
+
+
 
