@@ -156,7 +156,7 @@ function borrarTodo() {
 function toggleDarkMode() {
   calculadora.darkMode = !calculadora.darkMode;
   body.classList.toggle('dark-mode', calculadora.darkMode);
-  darkButton.textContent = calculadora.darkMode ? '🌙' : '☀️';
+  darkButton.textContent = calculadora.darkMode ? '☀️' : '🌙';
   localStorage.setItem('darkMode', calculadora.darkMode);
 }
 
